@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- start of React -->
+    <script
+      src="https://unpkg.com/react@18.2.0/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!--js file-->
+    <script
+      src="Assets/Js/React/Component/reactStuff.js"
+      type="text/babel"
+    ></script>
+
+    <title>ICA 7</title>
+  </head>
+
+  <body>
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-12">
+          <div id="react-data-table"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const dataSorting = (array = []) => {
+        let table = "";
+        if (Array.isArray(array) && array.length > 0) {
+          table += `<table class = "table">
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Are you a student or a professor?</th>
+                            <th>Which cohort are you in? (For students)</th>
+                            <th>Have you heard about the GIMM260 Jack Memes?</th>
+                            <th>Do you know Professor Polifka?</th>
+                            <th>Have any of your peers or colleagues mentioned these memes to you, even if you haven't seen them?</th>
+                            <th>Would you be interested in viewing these memes to provide further feedback on them?</th>
+                            <th>Are you in the GIMM 260 Discord?</th>
+                            <th>Have you ever shared or forwarded any of these memes?</th>
+                            <th>Which style of meme have you encountered the most?</th>
+                            <th>Which style of meme do you find the most amusing or interesting?</th>
+                            <th>Do you think these memes well represent the culture of GIMM?</th>
+                            <th>Do these memes bring about a sense of unity or division among students and professors, in your opinion?</th>
+                            <th>Do you believe the memes are:</th>
+                            <th>How do you think Jack feels about these memes?</th>
+                            <th>Please share any additional thoughts or insights about the GIMM260 Jack Memes.</th>
+                        </tr>`;
+          for (let i = 0; i < array.length; i++) {
+            table +=
+              `<tr>
+                            <td>` +
+              array[i].Timestamp +
+              `</td>
+                            <td>` +
+              array[i].studentOrProfessor +
+              `</td>
+                            <td>` +
+              array[i].cohortNum +
+              `</td>
+                            <td>` +
+              array[i].hasHeardOfMemes +
+              `</td>
+                            <td>` +
+              array[i].doYouKnowJack +
+              `</td>
+                            <td>` +
+              array[i].peerMentioned +
+              `</td>
+                            <td>` +
+              array[i].areYouInterested +
+              `</td>
+                            <td>` +
+              array[i].inClass +
+              `</td>
+                            <td>` +
+              array[i].hasShared +
+              `</td>
+                            <td>` +
+              array[i].prominentMeme +
+              `</td>
+                            <td>` +
+              array[i].amusingMeme +
+              `</td>
+                            <td>` +
+              array[i].memeCultured +
+              `</td>
+                            <td>` +
+              array[i].memeUnity +
+              `</td>
+                            <td>` +
+              array[i].natureMeme +
+              `</td>
+                            <td>` +
+              array[i].jackFeels +
+              `</td>
+                            <td>` +
+              array[i].addedThoughts +
+              `</td>
+                        <tr>`;
+          }
+          table += "</table>";
+        }
+        return table;
+      };
+      document.getElementById("react-data-table").innerHTML =
+        dataSorting(memeData);
+    </script>
+  </body>
+</html>
