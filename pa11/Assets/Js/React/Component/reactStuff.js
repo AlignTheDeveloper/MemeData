@@ -7,7 +7,7 @@
         originalData: props.originalData,
         studentOrProfessor: "",
         cohortNum: "",
-        hasHeardOfMemes: "",
+        hasHeardOfMemes: false,
       };
 
       this.updateFormState = this.updateFormState.bind(this);
@@ -41,19 +41,19 @@
 
       if (this.state.studentOrProfessor !== "") {
         filteredData = filteredData.filter(
-          (row) => row.studentOrProfessor === this.state.studentOrProfessor
+          (row) => row["Are you a student or a professor?"] === this.state.studentOrProfessor
         );
       }
 
       if (this.state.cohortNum !== "") {
         filteredData = filteredData.filter(
-          (row) => row.cohortNum === this.state.cohortNum
+          (row) => row["Which cohort are you in? (For students)"] === this.state.cohortNum
         );
       }
 
-      if (true === this.state.hasHeardOfMemes) {
+      if (this.state.hasHeardOfMemes) {
         filteredData = filteredData.filter(
-          (row) => row.hasHeardOfMemes === this.state.hasHeardOfMemes
+          (row) => row["Have you heard about the GIMM260 Jack Memes?"] === "Yes"
         );
       }
       return (
@@ -195,7 +195,7 @@
 
     let updateHasHeardOfMemes = (clickEvent) => {
       props.updateFormState({
-        hasHeardOfMemes: clickEvent.target.checked ? "Yes" : "No",
+        hasHeardOfMemes: clickEvent.target.checked,
       });
     };
 
@@ -217,7 +217,7 @@
               </select>
             </div>
             <div className="col-md-4">
-              <b>Has Heard of the Memes</b>
+              <b>Has Heard of the Memes </b>
               <input type="checkbox" onChange={updateHasHeardOfMemes} />
             </div>
           </div>
