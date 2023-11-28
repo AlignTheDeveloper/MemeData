@@ -79,7 +79,7 @@
     return (
       <React.Fragment>
         <div className="table-responsive">
-          <table className="table">
+          <table id="table-style" className="table">
             <tbody>
               <tr>
                 <th>Timestamp</th>

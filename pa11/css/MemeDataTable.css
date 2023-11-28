@@ -1,0 +1,71 @@
+#react-data-table {
+    color: #e7f2ff;
+    background-color: #325b91;
+}
+
+select {
+    color: #e7f2ff;
+    background-color: #172a43;
+}
+
+.row {
+    color: #e7f2ff;
+    background-color: #172a43;
+}
+
+input {
+    color: #e7f2ff;
+    background-color: #172a43;
+}
+
+.table tr:nth-child(even) {
+    background-color: #325b91;
+}
+  
+.table tr:hover {
+    background-color: #e9e9e9;
+}
+
+.container select, .container input {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #325b91;
+}
+
+.table th:first-child, .table td:first-child {
+    text-align: center;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+  
+@media screen and (max-width: 600px) {
+    .table th, .table td {
+      display: block;
+      width: 100%;
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+  
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+  
+.table th {
+    background-color: #325b91;
+    color: #e7f2ff;
+}
+
+.container.fluid{
+    background-color: black;
+}
+
