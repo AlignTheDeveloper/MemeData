@@ -204,18 +204,19 @@
         <h3>Data Filters:</h3>
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-2">
               <p>
                 <b>Student Status</b>:
               </p>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-2">
               <select onChange={updateStudentOrProfessor}>
                 <option value="">&nbsp;</option>
                 <option value="Student">Student</option>
                 <option value="Professor">Professor</option>
               </select>
             </div>
+            <div className="col-md-4"></div>
             <div className="col-md-4">
               <b>Has Heard of the Memes </b>
               <input type="checkbox" onChange={updateHasHeardOfMemes} />
@@ -241,6 +242,7 @@
               <input
                 list="cohort-number"
                 name="cohort-number"
+                placeholder="Cohort"
                 onChange={updateCohortNum}
               ></input>
               <datalist id="cohort-number">

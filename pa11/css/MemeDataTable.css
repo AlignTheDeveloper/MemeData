@@ -1,71 +1,78 @@
-#react-data-table {
-    color: #e7f2ff;
-    background-color: #325b91;
-}
-
-select {
-    color: #e7f2ff;
-    background-color: #172a43;
-}
-
-.row {
-    color: #e7f2ff;
-    background-color: #172a43;
-}
-
+/* General styles */
+#react-data-table,
+.row,
+select,
 input {
-    color: #e7f2ff;
+    color: #172a43;
+    background-color: #cae2ff;
+}
+
+body {
     background-color: #172a43;
+}
+
+/* Table styles */
+.table {
+    width: 200%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #cae2ff;
+}
+
+.table th,
+.table td {
+    border: 5px solid #cae2ff;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #325b91;
+    color: #f1f7ff;
 }
 
 .table tr:nth-child(even) {
     background-color: #325b91;
 }
-  
+
 .table tr:hover {
-    background-color: #e9e9e9;
+    background-color: #cae2ff;
 }
 
-.container select, .container input {
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid #325b91;
+/* Responsive styles for table */
+.table-responsive {
+    overflow-y: auto;
+    max-height: 600px; /* Adjusted for better responsiveness */
 }
 
-.table th:first-child, .table td:first-child {
+.table thead {
+    position: sticky;
+    top: 0;
+    background-color: #325b91;
+    z-index: 1;
+}
+
+/* Styles for first cell in each row */
+.table th:first-child,
+.table td:first-child {
     text-align: center;
 }
 
-.table-responsive {
-    overflow-x: auto;
+/* Styles for form elements in container */
+.container select,
+.container input {
+    padding: 5px;
+    margin: 5px;
+    border: 5px solid #325b91;
+    border-radius: 15px;
 }
-  
+
+/* Responsive styles for smaller screens */
 @media screen and (max-width: 600px) {
     .table th, .table td {
-      display: block;
-      width: 100%;
+        display: block;
+        width: 100%;
     }
 }
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-}
-  
-.table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-  
-.table th {
-    background-color: #325b91;
-    color: #e7f2ff;
-}
-
-.container.fluid{
-    background-color: black;
-}
-
