@@ -5,10 +5,18 @@ select,
 input {
     color: #172a43;
     background-color: #cae2ff;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    margin:0 auto;
 }
 
 body {
     background-color: #172a43;
+    color: #172a43;
 }
 
 /* Table styles */
@@ -29,12 +37,12 @@ body {
 }
 
 .table th {
-    background-color: #325b91;
-    color: #f1f7ff;
+    background-color: #172a43;
+    color: white;
 }
 
 .table tr:nth-child(even) {
-    background-color: #325b91;
+    background-color: #172a43;
 }
 
 .table tr:hover {
@@ -50,7 +58,7 @@ body {
 .table thead {
     position: sticky;
     top: 0;
-    background-color: #325b91;
+    background-color: #172a43;
     z-index: 1;
 }
 
@@ -65,8 +73,11 @@ body {
 .container input {
     padding: 5px;
     margin: 5px;
-    border: 5px solid #325b91;
+    border: 5px solid #172a43;
     border-radius: 15px;
+    color:#172a43;
+    background-color: white;
+    margin:0 auto;
 }
 
 /* Responsive styles for smaller screens */
@@ -75,4 +86,14 @@ body {
         display: block;
         width: 100%;
     }
+}
+
+#filter-header {
+    text-align: center;
+    margin:0 auto;
+}
+
+#cohort-number {
+    display: flex;
+    margin:0 auto;
 }

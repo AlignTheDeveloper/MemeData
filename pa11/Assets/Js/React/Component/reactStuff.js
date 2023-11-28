@@ -201,13 +201,11 @@
 
     return (
       <React.Fragment>
-        <h3>Data Filters:</h3>
+        <h3 id="filter-header">Data Filters:</h3>
         <div className="container">
           <div className="row">
             <div className="col-md-2">
-              <p>
-                <b>Student Status</b>:
-              </p>
+              <h5>Student Status:</h5>
             </div>
             <div className="col-md-2">
               <select onChange={updateStudentOrProfessor}>
@@ -217,8 +215,10 @@
               </select>
             </div>
             <div className="col-md-4"></div>
-            <div className="col-md-4">
-              <b>Has Heard of the Memes </b>
+            <div className="col-md-2">
+              <h5>Has Heard of the Memes </h5>
+            </div>
+            <div className="col-md-2">
               <input type="checkbox" onChange={updateHasHeardOfMemes} />
             </div>
           </div>
@@ -240,6 +240,7 @@
           <div className="row">
             <div className="col-md-12">
               <input
+                id="cohort-number"
                 list="cohort-number"
                 name="cohort-number"
                 placeholder="Cohort"
