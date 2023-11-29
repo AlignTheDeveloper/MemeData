@@ -41,13 +41,17 @@
 
       if (this.state.studentOrProfessor !== "") {
         filteredData = filteredData.filter(
-          (row) => row["Are you a student or a professor?"] === this.state.studentOrProfessor
+          (row) =>
+            row["Are you a student or a professor?"] ===
+            this.state.studentOrProfessor
         );
       }
 
       if (this.state.cohortNum !== "") {
         filteredData = filteredData.filter(
-          (row) => row["Which cohort are you in? (For students)"] === this.state.cohortNum
+          (row) =>
+            row["Which cohort are you in? (For students)"] ===
+            this.state.cohortNum
         );
       }
 
@@ -80,7 +84,7 @@
       <React.Fragment>
         <div className="table-responsive">
           <table id="table-style" className="table">
-            <tbody>
+            <thead>
               <tr>
                 <th>Timestamp</th>
                 <th>Are you a student or a professor?</th>
@@ -116,7 +120,8 @@
                   GIMM260 Jack Memes.
                 </th>
               </tr>
-
+            </thead>
+            <tbody>
               {props.dataToDisplay.map((row, i) => {
                 const studentOrProfessor =
                   row["Are you a student or a professor?"];

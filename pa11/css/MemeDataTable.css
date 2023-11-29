@@ -3,97 +3,115 @@
 .row,
 select,
 input {
-    color: #172a43;
-    background-color: #cae2ff;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+  color: #172a43;
+  background-color: #cae2ff;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 
 .container {
-    margin:0 auto;
+  margin: 0 auto;
 }
 
 body {
-    background-color: #172a43;
-    color: #172a43;
+  background-color: #172a43;
+  color: #172a43;
 }
 
 /* Table styles */
 .table {
-    width: 200%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #cae2ff;
+  width: 200%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #cae2ff;
 }
 
 .table th,
-.table td {
-    border: 5px solid #cae2ff;
-    border-radius: 5px;
-    padding: 8px;
-    text-align: left;
+.table td,
+.table thead {
+  border: 5px solid #cae2ff;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: left;
 }
 
 .table th {
-    background-color: #172a43;
-    color: white;
+  background-color: #172a43;
+  color: white;
 }
 
-.table tr:nth-child(even) {
-    background-color: #172a43;
+.table td:nth-child(even) {
+  background-color: whitesmoke;
 }
 
-.table tr:hover {
-    background-color: #cae2ff;
+.table td:hover {
+  background-color: #cae2ff;
 }
 
 /* Responsive styles for table */
 .table-responsive {
-    overflow-y: auto;
-    max-height: 600px; /* Adjusted for better responsiveness */
+  overflow-y: auto;
+  max-height: 600px; /* Adjusted for better responsiveness */
 }
 
 .table thead {
-    position: sticky;
-    top: 0;
-    background-color: #172a43;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #172a43;
+  z-index: 1;
+  text-align: center;
 }
 
 /* Styles for first cell in each row */
 .table th:first-child,
 .table td:first-child {
-    text-align: center;
+  text-align: center;
 }
 
 /* Styles for form elements in container */
 .container select,
 .container input {
-    padding: 5px;
-    margin: 5px;
-    border: 5px solid #172a43;
-    border-radius: 15px;
-    color:#172a43;
-    background-color: white;
-    margin:0 auto;
+  padding: 5px;
+  margin: 5px;
+  border: 5px solid #172a43;
+  border-radius: 15px;
+  color: #172a43;
+  background-color: white;
+  margin: 0 auto;
 }
 
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 600px) {
-    .table th, .table td {
-        display: block;
-        width: 100%;
-    }
+  .table th,
+  .table td {
+    display: block;
+    width: 100%;
+  }
 }
 
 #filter-header {
-    text-align: center;
-    margin:0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 #cohort-number {
-    display: flex;
-    margin:0 auto;
+  display: flex;
+  margin: 0 auto;
+}
+
+#homeButton,
+#homeButton h4,
+#homeButton h4 i{
+  padding: 0px;
+  text-align: center;
+}
+
+#homeButton {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #172a43;
+    border-radius: 15px;
 }

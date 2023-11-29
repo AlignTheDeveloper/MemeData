@@ -15,9 +15,8 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/MemeDataTable.css"
 
-    <!-- start of React -->
+      <!-- Start of React -->
     <script
       src="https://unpkg.com/react@18.2.0/umd/react.development.js"
       crossorigin
@@ -34,11 +33,35 @@
       type="text/babel"
     ></script>
 
-    <title>ICA 7</title>
+    <!-- fontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/08cb6ddf08.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="css/MemeDataTable.css"/>
+
+    <title>DataTable</title>
   </head>
 
   <body>
-    <div class="container fluid">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1">
+          <div id="homeButton">
+            <h4><i class="fa-solid fa-house"></i></h4>
+            <h4>home</h4>
+          </div>
+        </div>
+        <div class="col-9"></div>
+        <div class="col-2">
+          <h4>Menu Button</h4>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
       <div class="row">
         <div class="col-12">
           <div id="react-data-table"></div>
