@@ -102,16 +102,75 @@ body {
 }
 
 #homeButton,
-#homeButton h4,
-#homeButton h4 i{
-  padding: 0px;
+#hamburger {
+   padding: 15px;
+   padding-bottom: 5px;
   text-align: center;
 }
 
-#homeButton {
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 5px solid #172a43;
-    border-radius: 15px;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+/* Hamburger Icon */
+#hamburger {
+  cursor: pointer;
+  /* other styles... */
+}
+
+/* Navigation Menu */
+nav#navMenu {
+  background-color: #fff; /* Adjust color as needed */
+  border: 1px solid #ddd; /* Optional border */
+  position: absolute; /* Positioning */
+  top: 60px; /* Adjust based on the position of the hamburger icon */
+  right: 10px; /* Adjust as needed */
+  width: 200px; /* Adjust width as needed */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow for a pop-up effect */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+nav#navMenu h6 {
+  padding: 10px 15px;
+  margin: 0;
+  border-bottom: 1px solid #ddd; /* Optional */
+}
+
+nav#navMenu h6:last-child {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  nav#navMenu {
+      width: 100%; /* Full width on smaller screens */
+      top: 50px; /* Adjust as needed */
+      right: 0;
+  }
+}
+
+/* Hover effects for menu items */
+nav#navMenu a h6:hover {
+  background-color: #172a43; /* Adjust hover color as needed */
+}
+
+#memes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjusts the spacing around items */
+  text-align: center;
+}
+
+#memes img {
+  flex: 1;
+  max-width: 100%; /* Ensures images don't overflow their container */
+  height: auto; /* Maintains aspect ratio */
+  margin: 5px; /* Optional: Adds some space between images */
+  margin-left: auto;
+  margin-right: auto;
 }
