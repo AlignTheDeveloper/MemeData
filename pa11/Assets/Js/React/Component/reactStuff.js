@@ -7,7 +7,8 @@
         originalData: props.originalData,
         studentOrProfessor: "",
         cohortNum: "",
-        hasHeardOfMemes: false,
+        hasHeardOfMemes: "",
+        favoriteMeme: [],
       };
 
       this.updateFormState = this.updateFormState.bind(this);
@@ -57,9 +58,16 @@
 
       if (this.state.hasHeardOfMemes) {
         filteredData = filteredData.filter(
-          (row) => row["Have you heard about the GIMM260 Jack Memes?"] === "Yes"
+          (row) => row["Have you heard about the GIMM260 Jack Memes?"] === this.state.hasHeardOfMemes
         );
       }
+
+      if (this.state.favoriteMeme.length > 0) {
+        filteredData = filteredData.filter(
+          (row) => this.state.favoriteMeme.includes(row["Which style of meme do you find the most amusing or interesting?"])
+        );
+      }
+
       return (
         <React.Fragment>
           <Filters
@@ -72,6 +80,7 @@
           <hr />
           <DataList
             cohortNum={this.state.cohortNum}
+            favoriteMeme={this.state.favoriteMeme}
             updateFormState={this.updateFormState}
           />
         </React.Fragment>
@@ -200,7 +209,7 @@
 
     let updateHasHeardOfMemes = (clickEvent) => {
       props.updateFormState({
-        hasHeardOfMemes: clickEvent.target.checked,
+        hasHeardOfMemes: clickEvent.target.value,
       });
     };
 
@@ -221,10 +230,14 @@
             </div>
             <div className="col-md-4"></div>
             <div className="col-md-2">
-              <h5>Has Heard of the Memes </h5>
+              <h5>Has Heard of the Memes: </h5>
             </div>
             <div className="col-md-2">
-              <input type="checkbox" onChange={updateHasHeardOfMemes} />
+            <select onChange={updateHasHeardOfMemes}>
+                <option value="">&nbsp;</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>            
             </div>
           </div>
         </div>
@@ -239,11 +252,29 @@
       });
     };
 
+    let updateFavoriteMeme = (event) => {
+      const selectedMeme = event.target.value;
+      let newFavoriteMemes;
+    
+      if (event.target.checked) {
+        // Add the selected meme to the array
+        newFavoriteMemes = [...props.favoriteMeme, selectedMeme];
+      } else {
+        // Remove the deselected meme from the array
+        newFavoriteMemes = props.favoriteMeme.filter(meme => meme !== selectedMeme);
+      }
+    
+      props.updateFormState({
+        favoriteMeme: newFavoriteMemes,
+      });
+    }
+    
+
     return (
       <React.Fragment>
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-2">
               <input
                 id="cohort-number"
                 list="cohort-number"
@@ -260,6 +291,25 @@
                 <option value="Professor"></option>
               </datalist>
             </div>
+            <div className="col-md-8"></div>
+            <div className="col-md-2">
+              <p>Filter Favorite Meme Results: </p>
+              <div className="checkbox-container" onChange={updateFavoriteMeme}>
+                <label className="checkbox-label">
+                  <input type="checkbox" value="Jack's face on a famous character" />
+                  Famous Jack
+                </label>
+                <label className="checkbox-label">
+                  <input type="checkbox" value="Jack's face as a texture on a 3D modeled sphere" />
+                  Jorb
+                </label>
+                <label className="checkbox-label">
+                  <input type="checkbox" value="Jack's face in a popular meme format" />
+                  MemeFormat
+                </label>
+              </div>
+            </div>
+
           </div>
         </div>
       </React.Fragment>
