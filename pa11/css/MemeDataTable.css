@@ -216,7 +216,7 @@ h1 {
 #header-text {
   text-align: center;
   padding: 15px;
-  font-family: monospace;
+  font-family: "Space Mono", monospace;
 }
 
 .checkbox-container {
