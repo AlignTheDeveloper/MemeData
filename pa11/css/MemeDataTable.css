@@ -39,7 +39,8 @@ body {
   border: 5px solid #cae2ff;
   border-radius: 5px;
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  font-size: large;
   color: #172a43;
 }
 
@@ -232,4 +233,20 @@ h1 {
   display: flex;
   align-items: center; /* Aligns checkbox and label text vertically */
 }
+
+#graph1-container {
+  overflow: hidden;
+  /* other styling for the container */
+}
+
+#graph1 svg {
+  transition: transform 0.5s ease;
+}
+
+#graph1 svg:hover {
+  transform: scale(1.5); /* Adjust the scale value as needed */
+  transform-origin: center; /* Ensure zoom centers on the SVG itself */
+}
+
+
 
