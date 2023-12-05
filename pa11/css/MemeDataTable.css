@@ -248,5 +248,13 @@ h1 {
   transform-origin: center; /* Ensure zoom centers on the SVG itself */
 }
 
+#graph2-container {
+  overflow: hidden;
+  /* other styling for the container */
+}
+
+#graph2 svg {
+  transition: transform 0.5s ease;
+}
 
 
