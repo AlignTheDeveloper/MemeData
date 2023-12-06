@@ -254,7 +254,9 @@ h1 {
   87% {color: #6c2832;} 
 }
 
-iframe {
-  display:block;
-  margin: auto;
+#video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
