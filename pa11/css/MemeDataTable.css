@@ -201,7 +201,8 @@ nav#navMenu a h6:hover {
 .image-metadata p {
   margin: 0;
   padding: 0;
-  font-size: smaller; /* Adjust the font size as needed */
+  font-size: 1rem;
+  color: #cae2ff;
 }
 
 
