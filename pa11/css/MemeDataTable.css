@@ -236,15 +236,6 @@ h1 {
   overflow: hidden;
 }
 
-#graph1 svg {
-  transition: transform 0.5s ease;
-}
-
-#graph1 svg:hover {
-  transform: scale(1.5); /* Adjust the scale value as needed */
-  transform-origin: center; /* Ensure zoom centers on the SVG itself */
-}
-
 #header-text {
   animation-name: roygbiv;
   animation-duration: 8s;
@@ -261,4 +252,9 @@ h1 {
   62% {color: #4f2975;} 
   75% {color: #742774;} 
   87% {color: #6c2832;} 
+}
+
+iframe {
+  display:block;
+  margin: auto;
 }

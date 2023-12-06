@@ -34,13 +34,13 @@ class HamburgerMenu extends React.Component {
                 {this.state.isOpen && (
                     <nav id="navMenu">
                         <a href="/MemeDataTable.html" alt="Data Table">
-                            <h6>DataTable</h6>
+                            <h6><i class="fa-solid fa-table"></i> DataTable</h6>
                         </a>
                         <a href="/graph1.html" alt="Graph 1">
-                            <h6>Graph1</h6>
+                            <h6><i class="fa-solid fa-cloud"></i> Graph1</h6>
                         </a>
                         <a href="/graph2.html" alt="Graph 2">
-                            <h6>Graph2</h6>
+                            <h6><i class="fa-solid fa-chart-simple"></i> Graph2</h6>
                         </a>
                     </nav>
                 )}
