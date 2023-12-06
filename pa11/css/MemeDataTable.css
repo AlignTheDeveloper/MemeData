@@ -11,13 +11,12 @@ input {
 }
 
 p, ul, ol {
-  font-size: large;
+  font-size: 1rem;
 }
 
 .container {
   margin: 0 auto;
-  width: 80%;
-  max-width: 1200px;
+  max-width: 95%;
 }
 
 body {
@@ -30,7 +29,7 @@ body {
   width: 200%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   color: #cae2ff;
 }
 
@@ -38,9 +37,9 @@ body {
 .table td {
   border: 5px solid #cae2ff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 0.5rem;
   text-align: center;
-  font-size: large;
+  font-size: 1rem;
   color: #172a43;
 }
 
@@ -57,11 +56,10 @@ body {
   background-color: #cae2ff;
 }
 
-/* Responsive styles for table */
 .table-responsive {
   overflow-y: auto;
   overflow-x: auto;
-  max-height: 600px; /* Adjusted for better responsiveness */
+  max-height: 600px;
 }
 
 .table thead {
@@ -72,32 +70,21 @@ body {
   text-align: center;
 }
 
-/* Styles for first cell in each row */
 .table th:first-child,
 .table td:first-child {
   text-align: center;
 }
 
-/* Styles for form elements in container */
 .container select,
 .container input {
-  padding: 5px;
-  margin: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
   border: 5px solid #172a43;
-  border-radius: 15px;
+  border-radius: 2rem;
   color: #172a43;
   background-color: white;
   margin: 0 auto;
 }
-
-/* Responsive styles for smaller screens
-@media screen and (max-width: 600px) {
-  .table th,
-  .table td {
-    display: block;
-    width: 100%;
-  }
-} */
 
 #filter-header {
   text-align: center;
@@ -125,67 +112,61 @@ a {
 a:hover {
   color: white;
 }
-/* Hamburger Icon */
+
 #hamburger {
   cursor: pointer;
-  /* other styles... */
 }
 
-/* Navigation Menu */
+
 nav#navMenu {
-  background-color: #fff; /* Adjust color as needed */
-  border: 1px solid #ddd; /* Optional border */
-  position: absolute; /* Positioning */
-  top: 60px; /* Adjust based on the position of the hamburger icon */
-  right: 10px; /* Adjust as needed */
-  width: 200px; /* Adjust width as needed */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow for a pop-up effect */
-  z-index: 1000; /* Ensure it's above other content */
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  position: absolute; 
+  top: 60px; 
+  right: 10px; 
+  width: 200px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  nav#navMenu {
+    width: 100%;
+    top: 50px;
+    right: 0;
+  }
+  .container {
+    width: 100%; /* Full width on small screens */
+  }
 }
 
 nav#navMenu h6 {
   padding: 10px 15px;
   margin: 0;
-  border-bottom: 1px solid #ddd; /* Optional */
+  border-bottom: 1px solid #ddd;
 }
 
 nav#navMenu h6:last-child {
   border-bottom: none;
 }
 
-/* Responsive adjustments
-@media (max-width: 768px) {
-  /* Adjustments for smaller screens 
-  nav#navMenu {
-      width: 100%;
-      top: 50px; 
-      right: 0;
-  }
-  .table, .table-responsive, .container {
-    width: 100%;
-  }
-} */
-
-/* Hover effects for menu items */
 nav#navMenu a h6:hover {
-  background-color: #172a43; /* Adjust hover color as needed */
+  background-color: #172a43;
   color: #fff;
 }
 
 #memes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* Adjusts the spacing around items */
+  justify-content: space-around;
   text-align: center;
 }
 
 #memes img {
   flex: 1;
-  max-width: 100%; /* Ensures images don't overflow their container */
-  height: auto; /* Maintains aspect ratio */
-  margin: 5px; /* Optional: Adds some space between images */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%; 
+  height: auto;
+  margin: 0.5rem auto; 
 }
 
 #image-track > .image {
@@ -222,21 +203,18 @@ h1 {
 
 .checkbox-container {
   display: flex;
-  flex-direction: column; /* Aligns items horizontally */
-  justify-content: flex-start; /* Aligns items to the left */
-  flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
-  gap: 10px; /* Adjust the spacing between checkboxes */
+  flex-direction: column; 
+  gap: 10px;
   padding:15px;
 }
 
 .checkbox-label {
   display: flex;
-  align-items: center; /* Aligns checkbox and label text vertically */
+  align-items: center;
 }
 
-#graph1-container {
+#graph1-container, #graph2-container {
   overflow: hidden;
-  /* other styling for the container */
 }
 
 #graph1 svg {
@@ -248,13 +226,20 @@ h1 {
   transform-origin: center; /* Ensure zoom centers on the SVG itself */
 }
 
-#graph2-container {
-  overflow: hidden;
-  /* other styling for the container */
+#header-text {
+  animation-name: roygbiv;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-#graph2 svg {
-  transition: transform 0.5s ease;
+@keyframes roygbiv {
+  0%, 100% {color: #7f2f2f;}
+  12% {color: #815b31;} 
+  25% {color: #848431;} 
+  37% {color: #2e7b2e;} 
+  50% {color: #284974;} 
+  62% {color: #4f2975;} 
+  75% {color: #742774;} 
+  87% {color: #6c2832;} 
 }
-
-
